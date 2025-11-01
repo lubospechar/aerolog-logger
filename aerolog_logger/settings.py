@@ -24,10 +24,11 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 SECRET_KEY = config('SECRET_KEY')
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost', cast=Csv())
 
+SENSORS_ENABLED = config('SENSORS_ENABLED', default=False, cast=bool)
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -35,6 +36,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+AEROLOG_APPS = [
+    'datalogger'
+]
+
+INSTALLED_APPS = DJANGO_APPS + AEROLOG_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
