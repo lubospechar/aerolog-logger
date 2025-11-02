@@ -37,14 +37,19 @@ DJANGO_APPS = [
     "django.contrib.staticfiles",
 ]
 
+THREEPARTY_APPS = [
+    'rest_framework'
+]
+
 AEROLOG_APPS = [
     'datalogger'
 ]
 
-INSTALLED_APPS = DJANGO_APPS + AEROLOG_APPS
+INSTALLED_APPS = DJANGO_APPS + THREEPARTY_APPS + AEROLOG_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "django.middleware.gzip.GZipMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
