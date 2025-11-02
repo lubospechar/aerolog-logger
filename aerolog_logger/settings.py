@@ -56,6 +56,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "datalogger.middleware.SHA256ChecksumMiddleware"
 ]
 
 ROOT_URLCONF = "aerolog_logger.urls"
