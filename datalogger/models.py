@@ -22,6 +22,8 @@ class Sensor(models.Model):
     )
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
 
+    enabled = models.BooleanField(default=False)
+
     def __str__(self) -> str:
         return f"{self.name} [{self.code}]"
 
