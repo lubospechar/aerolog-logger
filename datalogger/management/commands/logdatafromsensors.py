@@ -15,7 +15,7 @@ class Command(BaseCommand):
             qmp6988 = QMP6988Fake()
             sht30 = SHT30Fake()
 
-        enabled_sensors = Sensor.objects.all()
+        enabled_sensors = Sensor.objects.filter(enabled=True)
 
         data = list()
         for sensor in enabled_sensors:
