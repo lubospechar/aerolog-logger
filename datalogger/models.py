@@ -9,6 +9,8 @@ class Unit(models.Model):
         max_length=10,
     )
 
+    updated_at = models.DateTimeField(auto_now=True)
+
     def __str__(self) -> str:
         if self.symbol:
             return f"{self.name} ({self.symbol})"
@@ -21,6 +23,7 @@ class Sensor(models.Model):
         max_length=100,
     )
     unit = models.ForeignKey(Unit, on_delete=models.CASCADE)
+    updated_at = models.DateTimeField(auto_now=True)
 
     enabled = models.BooleanField(default=False)
 

@@ -12,7 +12,7 @@ class UnitAdmin(admin.ModelAdmin):
 
 @admin.register(Sensor)
 class SensorAdmin(admin.ModelAdmin):
-    list_display = ("code", "name", "unit")
+    list_display = ("code", "name", "unit", "enabled")
     search_fields = ("code", "name")
     list_select_related = ("unit",)
     ordering = ("code",)
